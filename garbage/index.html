@@ -11,9 +11,34 @@
       color: #fff;
     }
     #page1 {
-      min-height: calc(100vh - 80px);
+      /*min-height: calc(100vh - 80px);*/
+      min-height: 100vh;
     }
     .green-circle {
+      width: 0px;
+      height: 0px;
+      border-radius: 100%;
+      background-color: #22b273;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      transition: .8s;
+      opacity: 0;
+    }
+    .green-circle-1 {
+      width: 0px;
+      height: 0px;
+      border-radius: 100%;
+      background-color: #22b273;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      transition: .8s;
+      opacity: 0;
+    }
+    .green-circle-2 {
       width: 0px;
       height: 0px;
       border-radius: 100%;
@@ -33,22 +58,44 @@
       width: 500px;
       height: 500px;
     }
+    .show-circle-bigger {
+      opacity: 1;
+      width: 700px;
+      height: 700px;
+    }
+    .show-circle-full {
+      opacity: 1;
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+    }
   </style>
 </head>
 <body>
   <div class="page1">
     <div id="page1" class="text-center d-flex flex-column justify-content-center">
       <h1>ไหวบ่ <span style="color: #22b273">?</span> บ่อขยะ</h1>
-      <p>บ่อขยะในกรุงเทพอาจจะมีปริมาณไม่เพียงพอ ขยะจะล้นเมือง<br />ถ้าคนกรุงเทพยังมีพฤติกรรมการบริโภคแบบเดิมๆ และยังไม่มีวิธีการแยกและกำจัดขยะที่เป็นระบบ</p>
-    </div>
-    <div class="scroll-down text-center">
-      <p>Scroll down</p>
-      <a id="scroll-down" href="#green-circle"><i class="fas fa-chevron-down"></i></a>
+      <p style="margin-bottom: 100px;">บ่อขยะในกรุงเทพอาจจะมีปริมาณไม่เพียงพอ ขยะจะล้นเมือง<br />ถ้าคนกรุงเทพยังมีพฤติกรรมการบริโภคแบบเดิมๆ และยังไม่มีวิธีการแยกและกำจัดขยะที่เป็นระบบ</p>
+      <div class="scroll-down text-center">
+        <p>Scroll down</p>
+        <a id="scroll-down" href="#"><i class="fas fa-chevron-down"></i></a>
+      </div>
     </div>
     <div class="green-circle text-center d-flex flex-column justify-content-center">
       <p>รู้ไหมว่า...?</p>
       <p>คุณสร้างขยะไปเยอะแค่ไหน</p>
+      <a id="next-circle" href="#">next</a>
     </div>
+    <div class="green-circle-1 text-center d-flex flex-column justify-content-center">
+      <p>รู้ไหมว่า...?</p>
+      <a id="next-circle-1" href="#">next</a>
+    </div>
+    <div class="green-circle-2 text-center d-flex flex-column justify-content-center">
+    </div>
+  </div>
+
+  <div id="page2" class="text-center">
+    <h1>ddd</h1>
   </div>
 
 
@@ -56,8 +103,18 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <script>
-    $('#scroll-down').click(() => {
-      $('.green-circle').addClass('show-circle')
+    $(document).ready(() => {
+      $('#scroll-down').click(() => {
+        $('.green-circle').addClass('show-circle')
+      })
+      $('#next-circle').click(() => {
+        $('.green-circle-1').addClass('show-circle-bigger')
+    //    $('.green-circle').removeClass('show-circle')
+      })
+      $('#next-circle-1').click(() => {
+        $('.green-circle-2').addClass('show-circle-full')
+    //    $('.green-circle-1').removeClass('show-circle-bigger')
+      })
     })
   </script>
 </body>
