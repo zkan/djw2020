@@ -210,21 +210,22 @@
 
       const circleScale = d3.scaleSqrt().domain([0, 100]).range([0, 100])
       d3.csv('garbage-amount.csv').then(districtCoordinates => {
-        var svgContainer = d3.select("#garbage-amount-map").append("svg")
-                                                           .attr("width", 800)
-                                                           .attr("height", 600)
-                                                           .style("border", "1px solid white");
+        console.log(districtCoordinates)
+        const svgContainer = d3.select("#garbage-amount-map").append("svg")
+                                                             .attr("width", 800)
+                                                             .attr("height", 600)
+                                                             .style("border", "1px solid white");
 
-        var circles = svgContainer.selectAll("circle")
-                                  .data(districtCoordinates)
-                                  .enter()
-                                  .append("circle")
+        const circles = svgContainer.selectAll("circle")
+                                    .data(districtCoordinates)
+                                    .enter()
+                                    .append("circle")
 
-        var circleAttributes = circles
-                               .attr("cx", d => d.x)
-                               .attr("cy", d => d.y)
-                               .attr("r", d => circleScale(d.amount))
-                               .style("fill", "#22b273")
+        const circleAttributes = circles
+                                 .attr("cx", d => d.x)
+                                 .attr("cy", d => d.y)
+                                 .attr("r", d => circleScale(d.amount))
+                                 .style("fill", "#22b273")
       })
     </script>
 </body>
