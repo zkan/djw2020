@@ -187,9 +187,14 @@
             <img class="img-top-gabage" src="./Design/SVG/background_garbage_bw.png" />
         </section>
         <section class="vertical-scrolling">
-          <div id="garbage-amount-map">
-          </div>
-        </section">
+          <div id="garbage-amount-map-1"></div>
+        </section>
+        <section class="vertical-scrolling">
+          <div id="garbage-amount-map-2"></div>
+        </section>
+        <section class="vertical-scrolling">
+          <div id="garbage-amount-map-3"></div>
+        </section>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -201,30 +206,69 @@
 
     // fullpage customization
     $('#fullpage').fullpage({
-        sectionsColor: ['#000', '#000', '#000', '#22b273', '#22b273', '#22b273','#22b273'],
+        sectionsColor: ['#000', '#000', '#000', '#22b273', '#22b273', '#22b273', '#22b273', '#fff', '#fff', '#fff'],
         sectionSelector: '.vertical-scrolling',
         navigation: false,
         slidesNavigation: true,
-        anchors: ['firstSection', 'secondSection', 'thirdSection', 'fourthSection', 'fifthSection', 'sixthSection', 'seventhSection', 'eighthSection'],
+        anchors: [
+          'firstSection',
+          'secondSection',
+          'thirdSection',
+          'fourthSection',
+          'fifthSection',
+          'sixthSection',
+          'seventhSection',
+          'eighthSection',
+          'ninthSection',
+          'tenthSection'
+        ],
     });
 
-      const circleScale = d3.scaleSqrt().domain([0, 100]).range([0, 100])
-      d3.csv('garbage-amount.csv').then(districtCoordinates => {
-        console.log(districtCoordinates)
-        const svgContainer = d3.select("#garbage-amount-map").append("svg")
+      const circleScale = d3.scaleSqrt().domain([55, 390]).range([0, 20])
+      d3.csv('garbage-amount-full.csv').then(districtCoordinates => {
+        const svgContainer1 = d3.select("#garbage-amount-map-1").append("svg")
                                                              .attr("width", 800)
                                                              .attr("height", 600)
-                                                             .style("border", "1px solid white");
 
-        const circles = svgContainer.selectAll("circle")
+        const circles1 = svgContainer1.selectAll("circle")
                                     .data(districtCoordinates)
                                     .enter()
                                     .append("circle")
 
-        const circleAttributes = circles
+        const circleAttributes1 = circles1
                                  .attr("cx", d => d.x)
                                  .attr("cy", d => d.y)
-                                 .attr("r", d => circleScale(d.amount))
+                                 .attr("r", d => circleScale(d.amount2559))
+                                 .style("fill", "#22b273")
+
+        const svgContainer2 = d3.select("#garbage-amount-map-2").append("svg")
+                                                             .attr("width", 800)
+                                                             .attr("height", 600)
+
+        const circles2 = svgContainer2.selectAll("circle")
+                                    .data(districtCoordinates)
+                                    .enter()
+                                    .append("circle")
+
+        const circleAttributes2 = circles2
+                                 .attr("cx", d => d.x)
+                                 .attr("cy", d => d.y)
+                                 .attr("r", d => circleScale(d.amount2560))
+                                 .style("fill", "#22b273")
+
+        const svgContainer3 = d3.select("#garbage-amount-map-3").append("svg")
+                                                             .attr("width", 800)
+                                                             .attr("height", 600)
+
+        const circles3 = svgContainer3.selectAll("circle")
+                                    .data(districtCoordinates)
+                                    .enter()
+                                    .append("circle")
+
+        const circleAttributes3 = circles3
+                                 .attr("cx", d => d.x)
+                                 .attr("cy", d => d.y)
+                                 .attr("r", d => circleScale(d.amount2561))
                                  .style("fill", "#22b273")
       })
     </script>
