@@ -353,6 +353,15 @@
         background-color: #22b273;
         padding: 60px;
     }
+    .green-box p {
+        margin-bottom: 0;
+    }
+    
+    .green-box ol {
+        font-size: 20px;
+        padding-left: 18px;
+        line-height: 1.8;
+    }
 
     </style>
 </head>
@@ -505,6 +514,27 @@
                 </div>
             </div>
         </section>
+        <section class="vertical-scrolling">
+            <div class="d-flex">
+                <div class="next-left">
+                    <div class="green-box">
+                       <p>วิเคราะห์กราฟ</p>
+                       <p>[ตั้งคำถามกับข้อมูลงบประมาณที่ได้มา]</p>
+                       <ol>
+                            <li>เขตไหนได้งบเยอะที่สุด สัมพันธ์กับจำนวนขยะและจำนวนประชากรหรือไม่</li>
+                            <li>งบด้านสิ่งแวดล้อมเอาไปใช้อะไรบ้าง ใช้ส่วนไหนเยอะที่สุด และน้อยที่สุด</li>
+                            <li>งบประมาณที่ใช้ไปสอดคล้องกับโรดแมพที่ตั้งไว้ไหม</li>
+                            <li>เปรียบเทียบงบ 3 ปี เพิ่มขึ้นทุกปีไหม แพทเทิร์นการใช้จ่ายเหมือนเดิมหรือเปล่า [ถ้าเพิ่มขึ้น ทำไมขยะที่เอามาฝังกลบไม่ลดลง]</li>
+                            <li>ที่มางบประมาณมาจากไหนบ้าง</li>
+                       </ol>
+                    </div>
+                </div>
+                <div class="next-right">
+                    <h1 class="font-black">งบประมาณสิ่งแวดล้อม</h1>
+                    <div id="garbage-budget-bkk-2"></div>
+                </div>
+            </div>
+        </section>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -516,7 +546,7 @@
 
     // fullpage customization
     $('#fullpage').fullpage({
-        sectionsColor: ['#000', '#000', '#000', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#fff', '#22b273', '#fff'],
+        sectionsColor: ['#000', '#000', '#000', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#fff', '#22b273', '#fff', '#fff'],
         sectionSelector: '.vertical-scrolling',
         navigation: false,
         slidesNavigation: true,
