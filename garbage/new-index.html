@@ -231,10 +231,56 @@
     .full-height {
         height: 100vh;
     }
-    .borders-lines div {
+
+    .y,
+    .z,
+    .left,
+    .right {
+        flex: 0 0 50%;
+    }
+
+    .box, .y {
         border: 1px solid #fff;
-        height: 50px;
-        width: 100%;
+    }
+
+
+    .left .box:nth-child(1) {
+        height: 130%
+    }
+
+    .left .box:nth-child(2) {
+        height: 80%
+    }
+
+    .left .box:nth-child(3) {
+        height: 90%;
+    }
+
+    .right .box:nth-child(1) {
+        height: 130%
+    }
+
+    .right .box:nth-child(2),.right .box:nth-child(3){
+        height: 45%;
+    }
+
+    .right .box:nth-child(4) {
+        height: 80%;
+    }
+
+    .right .box:nth-child(4) .y {
+        height: 100%;
+    }
+
+    .box, 
+    .right .box .y {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .box h1 {
+        font-size: 48px;
+        font-weight: 700;
     }
 
     </style>
@@ -344,13 +390,23 @@
                     <p>หากปริมาณขยะเพิ่มขึ้นเรื่อยๆ โดยยังไม่ทำอะไรในอีก ... ปี <br> ก็ต้องหาบ่อขยะแห่งอื่นมารองรับขยะฝังกลบเหล่านี้</p>
                     <h1>XXX ตร.กม.</h1>
                 </div>
-                <div class="col-6 borders-lines">
+                <div class="col-6">
                     <div class="row">
-                        <div class="col-6"><h1>เขต A</h1></div>
-                        <div class="col-6">
+                        <div class="left">
+                            <div class="box"><h1>เขต A</h1></div>
+                            <div class="box"><h1>เขต B</h1></div>
+                            <div class="box"><h1>เขต C</h1></div>
                         </div>
-                            <div class="col-6"></div>
-                        <div class="col-6"></div>
+                        <div class="right">
+                            <div class="box"><h1>เขต D</h1></div>
+                            <div class="box"><h1>เขต E</h1></div>
+                            <div class="box"><h1>เขต F</h1></div>
+                            <div class="box d-flex">
+                                <div class="y"><h1>Y</h1></div>
+                                <div class="z"><h1>Z</h1></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
