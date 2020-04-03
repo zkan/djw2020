@@ -440,6 +440,21 @@
         top: 50%;
     }
 
+    .team {
+        margin-bottom: 50px;
+        font-size: 20px;
+        line-height: 2;
+    }
+    
+    .team tr td:first-child {
+        text-align: left;
+        color: #22b273;
+    }
+
+    .team tr td:last-child {
+        text-align: right;
+    }
+
     </style>
 </head>
 <body>
@@ -637,6 +652,29 @@
             <div class="black-circle circle-5"></div>
             <div class="black-circle circle-6"></div>
         </section>
+        <section class="vertical-scrolling">
+            <div class="d-flex align-items-center justify-content-center flex-column">
+                <table class="team">
+                    <tr>
+                      <td>Kade Thossaphonpaisan</td>
+                      <td>Journalist</td>
+                    </tr>
+                    <tr>
+                      <td>Kan Ouivirach</td>
+                      <td>Programmer/Coder</td>
+                    </tr>
+                    <tr>
+                      <td >Monsicha Srisuantang</td>
+                      <td>Graphic Designer</td>
+                    </tr>
+                    <tr>
+                      <td>Santichai Apornsri</td>
+                      <td>Team Coach</td>
+                    </tr>
+                  </table>
+                <p>This Project is a part of Data Journalism Workshop 2020</p>
+            </div>
+        </section>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -648,7 +686,7 @@
 
     // fullpage customization
     $('#fullpage').fullpage({
-        sectionsColor: ['#000', '#000', '#000', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#fff', '#22b273', '#fff', '#fff', '#fff', '#fff', '#fff'],
+        sectionsColor: ['#000', '#000', '#000', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#fff', '#22b273', '#fff', '#fff', '#fff', '#fff', '#fff', '#000'],
         sectionSelector: '.vertical-scrolling',
         navigation: false,
         slidesNavigation: true,
@@ -669,7 +707,8 @@
           'fourteenthSection',
           'fifteenthSection',
           'sixteenthSection',
-          'seventeenthSection'
+          'seventeenthSection',
+          'lastSection'
         ],
     });
 
