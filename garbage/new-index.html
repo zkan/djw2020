@@ -295,6 +295,64 @@
     .plus {
         left: 76%;
     }
+    .chart-detail {
+        padding: 40px;
+    }
+
+    .chart-detail ul {
+        color: #000;
+        font-size: 24px;
+        font-weight: 700;
+        list-style: none;
+        line-height: 2;    
+    }
+
+    .chart-detail li::before {
+        content: ' ';
+        width: 20px;
+        height: 20px;
+        background-color: #000;
+        display: inline-block;
+        margin-right: 15px;
+
+    }
+
+    .chart-detail li:nth-child(1) {
+        color: #22b273; 
+    }
+
+    .chart-detail li:nth-child(1):before{
+       background-color: #22b273; 
+    }
+
+    .chart-detail li:nth-child(2):before{
+       background-color: #808080;
+
+    }
+
+    .chart-detail li:nth-child(3):before{
+       background-color: #4d4d4d;
+    }
+
+    .next-left {
+        flex: 0 0 45%;
+        text-align: left;
+        margin-top: 4%;
+    }
+
+    .next-right {
+        flex: 0 0 55%;
+        
+    }
+
+    .next-right h1 {
+        font-weight: 700;
+    }
+
+    .green-box {
+        background-color: #22b273;
+        padding: 60px;
+    }
 
     </style>
 </head>
@@ -426,7 +484,26 @@
             </div>
         </section>
         <section class="vertical-scrolling">
-            <div id="garbage-budget-bkk"></div>
+            <div class="d-flex">
+                <div class="next-left">
+                    <div class="green-box">
+                        <h1 class="how-produce">มาดูกันว่า</h1>
+                        <h1>งบประมาณด้านสิ่งแวดล้อม <br> ที่จัดสรรในแต่ละปี <br> เอาไปทำอะไรบ้าง?</h1>
+                    </div>
+                    <div class="chart-detail">
+                        <ul>
+                            <li>งบประมาณขยะ</li>
+                            <li>งบอื่นๆ</li>
+                            <li>งบอื่นๆ</li>
+                            <li>งบอื่นๆ</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="next-right">
+                    <h1 class="font-black">งบประมาณสิ่งแวดล้อม</h1>
+                    <div id="garbage-budget-bkk"></div>
+                </div>
+            </div>
         </section>
     </div>
 
@@ -457,6 +534,8 @@
           'eleventhSection',
           'twelvethSection',
           'thirteenthSection',
+          'fourteenthSection',
+
         ],
     });
 
