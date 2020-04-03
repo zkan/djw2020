@@ -83,10 +83,13 @@
         display: inline-block;
         background-color: #000;
         padding: 20px;
+        flex: 0 0 40%;
+        margin-left: 250px;
     }
     .right-detail ul {
         list-style: none;
         line-height: 1.4;
+        text-align: left;
     }
 
     .right-detail ul li {
@@ -97,8 +100,7 @@
         background-image:  url('./Design/SVG/background_garbage_bw.png');
         background-repeat: no-repeat;
         background-position: center center;
-        background-attachment: scroll;
-        background-size: cover;
+        background-size: 220%;
     }
 
     .year-g {
@@ -119,8 +121,12 @@
         overflow: hidden;
     }
 
+
     .bg-top-gabage {
-        overflow: hidden;
+        background-image: url('./Design/SVG/background_garbage_bw.png');
+        background-size: 210%;
+        background-position: bottom center;
+        background-repeat: no-repeat;
     }
 
     .head-bold {
@@ -385,6 +391,11 @@
         background-color: #000;
         border-radius: 100%;
         position: absolute;
+        opacity: 0;
+    }
+
+    .show-black-circle {
+        opacity: 1;
     }
 
     .circle-1 {
@@ -392,6 +403,7 @@
         height: 400px;
         top: 10%;
         left: -30px;
+        transition: .8s;
     }
 
     .circle-2 {
@@ -399,6 +411,7 @@
         height: 550px;
         top: 31%;
         left: 170px;
+        transition: 1.5s;
     }
 
     .circle-3 {
@@ -406,6 +419,7 @@
         height: 420px;
         bottom: -220px;
         left: -50px;
+        transition: .8s;
     }
 
     .circle-4 {
@@ -413,6 +427,7 @@
         height: 400px;
         top: -40px;
         left: 20%;
+        transition: 1.2s;
     }
 
     .circle-5 {
@@ -420,6 +435,7 @@
         height: 550px;
         top: 9%;
         left: 40%;
+        transition: .9s;
     }
 
     .circle-6{
@@ -427,6 +443,7 @@
         height: 820px;
         bottom: -18%;
         right: -150px;
+        transition: 1s;
     }
 
     .act-content {
@@ -457,7 +474,7 @@
         opacity: 0;
         width: 0px;
         height: 0px;
-        transition: .8s;
+        transition: 1s;
     }
 
     .show-first-circle {
@@ -470,7 +487,7 @@
         opacity: 0;
         width: 500px;
         height: 500px;
-        transition: .8s;
+        transition: 1s;
     }
 
     .show-second-circle {
@@ -519,14 +536,13 @@
         <section class="vertical-scrolling bg-gabage">
             <h1 class="how-produce">กรุงเทพผลิตขยะเท่าไหร่</h1>
             <div class="row">
-                <div class="col d-flex justify-content-end">
+                <div class="col d-flex justify-content-center">
                     <div class="right-detail">
                         <ul>
                             <li>ข้อมูลจากสำนักสิ่งแวดล้อมกรุงเทพ ระบุว่า</li>
-                            <li>ข้อมูลจากสำนักสิ่งแวดล้อมกรุงเทพ ระบุว่า</li>
-                            <li>ข้อมูลจากสำนักสิ่งแวดล้อมกรุงเทพ ระบุว่า</li>
-                            <li>ข้อมูลจากสำนักสิ่งแวดล้อมกรุงเทพ ระบุว่า</li>
-                            <li>ข้อมูลจากสำนักสิ่งแวดล้อมกรุงเทพ ระบุว่า</li>
+                            <li>ขยะมูลฝอยในกรุงเทพมีปริมาณมากขึ้นในทุกปี และไม่เคยลดลงเลย</li>
+                            <li>จากปี 2559 ถึงปี 2561 กรุงเทพสร้างขยะเพิ่มขึ้รโดยเฉลี่ย ...เปอร์เซ็น</li>
+                            <li>และมีแนวโน้มจะสูงขึ้นเป็น ... ในปี 2563</li>
                         </ul>
                     </div>
                 </div>
@@ -536,9 +552,8 @@
             </div>
         </section>
         <section class="vertical-scrolling bg-top-gabage">
-            <h1 class="how-produce">รู้หรือไม่ว่า ?</h1>
+            <h1 class="how-produce">แล้วคุณรู้หรือไม่ว่า ?</h1>
             <p class="big-bold">ขยะแต่ละชิ้นที่ปล่อยจากมือคุณ <br> มันเดินทางไปไหนต่อ</p>
-            <img class="img-top-gabage" src="./Design/SVG/background_garbage_bw.png" />
         </section>
         <section class="vertical-scrolling">
             <h2 class="head-bold">เส้นทางขยะจากกรุงเทพ</h2>
@@ -850,6 +865,9 @@
         }
         if (window.location.href.indexOf("thirdSection") > -1) { 
             $('.second-circle').addClass('show-second-circle')
+        }
+        if (window.location.href.indexOf("seventeenthSection") > -1) { 
+            $('.black-circle').addClass('show-black-circle')
         }
     });
   </script>
