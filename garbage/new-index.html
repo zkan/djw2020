@@ -38,21 +38,18 @@
     }
 
     .green-circle {
-      width: 500px;
-      height: 500px;
       border-radius: 100%;
       background-color: #22b273;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       position: absolute;
-      transition: .8s;
-      /* opacity: 0; */
     }
-    .green-scale-up {
+
+    /* .green-scale-up {
       width: 700px;
       height: 700px;
-    }
+    } */
 
     .big-bold {
         font-size: 28px;
@@ -445,7 +442,7 @@
         font-size: 20px;
         line-height: 2;
     }
-    
+
     .team tr td:first-child {
         text-align: left;
         color: #22b273;
@@ -454,6 +451,34 @@
     .team tr td:last-child {
         text-align: right;
     }
+
+    /* animate */
+    .first-circle {
+        opacity: 0;
+        width: 0px;
+        height: 0px;
+        transition: .8s;
+    }
+
+    .show-first-circle {
+        opacity: 1;
+        width: 500px;
+        height: 500px;
+    }
+
+    .second-circle {
+        opacity: 0;
+        width: 500px;
+        height: 500px;
+        transition: .8s;
+    }
+
+    .show-second-circle {
+        opacity: 1;
+        width: 700px;
+        height: 700px;
+    }
+
 
     </style>
 </head>
@@ -468,13 +493,13 @@
             </div>
         </section>
         <section class="vertical-scrolling">
-            <div class="green-circle d-flex flex-column justify-content-center">
+            <div class="green-circle d-flex flex-column justify-content-center first-circle">
                 <p>รู้ไหมว่า...?</p>
                 <p>คุณสร้างขยะไปเยอะแค่ไหน</p>
             </div>
         </section>
         <section class="vertical-scrolling">
-            <div class="green-circle green-scale-up d-flex flex-column justify-content-center">
+            <div class="green-circle green-scale-up d-flex flex-column justify-content-center second-circle">
                 <p>คุณอายุ 24 ปี</p>
                 <p class="font-black"><i>โดยเฉลี่ยคนกรุงเทพ สร้างขยะต่อวัน = 10,526</i></p>
                 <p class="big-bold">คุณสร้างขยะไปแล้ว xxx ตัน</p>
@@ -817,6 +842,16 @@
             .attr("height", function(d) { return y(d[0]) - y(d[1]); })
             .attr("width",x.bandwidth())
     }
+
+    // Animation
+    $('#fullpage').mousemove(function( event ) {
+        if (window.location.href.indexOf("secondSection") > -1) { 
+            $('.first-circle').addClass('show-first-circle')
+        }
+        if (window.location.href.indexOf("thirdSection") > -1) { 
+            $('.second-circle').addClass('show-second-circle')
+        }
+    });
   </script>
 </body>
 </html>
