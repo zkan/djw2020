@@ -356,13 +356,34 @@
     .green-box p {
         margin-bottom: 0;
     }
-    
+
     .green-box ol {
         font-size: 20px;
         padding-left: 18px;
         line-height: 1.8;
     }
 
+    .country {
+        display: flex;
+        height: 100%;
+        padding: 50px;
+    }
+
+    .country .each {
+        background-color: #22b273;
+        flex: 0 0 47%;
+        border-radius: 12px;
+        margin: 15px;
+        padding: 30px;
+    }
+
+    .country .each:nth-child(1) {
+        background-color: #000;
+    }
+
+    .country .each h3 {
+        font-weight: 700;
+    }
     </style>
 </head>
 <body>
@@ -535,6 +556,14 @@
                 </div>
             </div>
         </section>
+        <section class="vertical-scrolling">
+            <div class="row country">
+                <div class="each"><h3>THAILAND</h3></div>
+                <div class="each"><h3>SWEDEN</h3></div>
+                <div class="each"><h3>TAIWAN</h3></div>
+                <div class="each"><h3>GERMANY</h3></div>
+            </div>
+        </section>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -546,7 +575,7 @@
 
     // fullpage customization
     $('#fullpage').fullpage({
-        sectionsColor: ['#000', '#000', '#000', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#fff', '#22b273', '#fff', '#fff'],
+        sectionsColor: ['#000', '#000', '#000', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#fff', '#22b273', '#fff', '#fff', '#fff'],
         sectionSelector: '.vertical-scrolling',
         navigation: false,
         slidesNavigation: true,
@@ -565,7 +594,7 @@
           'twelvethSection',
           'thirteenthSection',
           'fourteenthSection',
-
+          'fifteenth',
         ],
     });
 
