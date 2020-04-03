@@ -384,6 +384,62 @@
     .country .each h3 {
         font-weight: 700;
     }
+    .black-circle {
+        background-color: #000;
+        border-radius: 100%;
+        position: absolute;
+    }
+
+    .circle-1 {
+        width: 400px;
+        height: 400px;
+        top: 10%;
+        left: -30px;
+    }
+
+    .circle-2 {
+        width: 550px;
+        height: 550px;
+        top: 31%;
+        left: 170px;
+    }
+
+    .circle-3 {
+        width: 420px;
+        height: 420px;
+        bottom: -220px;
+        left: -50px;
+    }
+
+    .circle-4 {
+        width: 400px;
+        height: 400px;
+        top: -40px;
+        left: 20%;
+    }
+
+    .circle-5 {
+        width: 550px;
+        height: 550px;
+        top: 9%;
+        left: 40%;
+    }
+
+    .circle-6{
+        width: 820px;
+        height: 820px;
+        bottom: -18%;
+        right: -150px;
+    }
+
+    .act-content {
+        position: absolute;
+        z-index: 2;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        top: 50%;
+    }
+
     </style>
 </head>
 <body>
@@ -569,6 +625,18 @@
             <p class="font-black">อันที่จริงแล้ว กทม.ก็มีโร้ดแมพในการลดขยะ และกำลังอยู่ในขั้นตอนการดำเนินการ <br> มาดูกันว่ากรุงเทพทำอะไรไปแล้วบ้างมีอะไรที่ยังไม่ได้ทำและต่างประเทศเขาทำอะไปถึงไหน <br> แล้ว</p>
             <p class="green">สรุปสุดท้าย --- บ่อขยะในกรุงเทพอาจจะมีปริมาณไม่เพียงพอ ขยะจะล้นเมือง<br> ถ้าคนกรุงเทพยังบริโภคในปริมาณเท่าเดิมและยังไม่มีการวิธีแยกและกำจัดขยะที่เป็นระบบ</p>
         </section>
+        <section class="vertical-scrolling">
+            <div class="act-content">
+                <p>สรุปปิดท้าย: ตั้งคำถามกับคนอ่าน และเรียกร้องให้มีแอคชั่นบางอย่าง<br>โร้ดแมพนี้ช้าไปไหม เมื่อเทียบกับปริมาณการขยะที่เพิ่มสูงขึ้น จำนวนประชากรในกรุงเทพที่มีมากขึ้นในทุกๆปีเราต้อง<br> ใช้พื้นที่ และงบประมาณอีกเท่าไหร่ในการกำจัดขยะที่แยกไม่ถูกวิธี<br>ไหวบ่? บ่อขยะที่รองรับขยะจากกรุงเทพอาจไม่ไหวแล้ว ถ้าเราไม่เปลี่ยนแปลงพฤติกรรม และเรียกร้องให้ภครัฐออก<br>กฏหมายหรือนโยบายเพื่อแก้ปัญหาขยะตั้งแต่ตอนนี้</p>
+                <h1 class="green">ACT NOW!</h1>
+            </div>
+            <div class="black-circle circle-1"></div>
+            <div class="black-circle circle-2"></div>
+            <div class="black-circle circle-3"></div>
+            <div class="black-circle circle-4"></div>
+            <div class="black-circle circle-5"></div>
+            <div class="black-circle circle-6"></div>
+        </section>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -580,7 +648,7 @@
 
     // fullpage customization
     $('#fullpage').fullpage({
-        sectionsColor: ['#000', '#000', '#000', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#fff', '#22b273', '#fff', '#fff', '#fff', '#fff'],
+        sectionsColor: ['#000', '#000', '#000', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#fff', '#22b273', '#fff', '#fff', '#fff', '#fff', '#fff'],
         sectionSelector: '.vertical-scrolling',
         navigation: false,
         slidesNavigation: true,
@@ -601,6 +669,7 @@
           'fourteenthSection',
           'fifteenthSection',
           'sixteenthSection',
+          'seventeenthSection'
         ],
     });
 
