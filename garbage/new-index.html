@@ -425,6 +425,9 @@
                 <h1 class="plus">+</h1>
             </div>
         </section>
+        <section class="vertical-scrolling">
+            <div id="garbage-budget-bkk"></div>
+        </section>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -436,7 +439,7 @@
 
     // fullpage customization
     $('#fullpage').fullpage({
-        sectionsColor: ['#000', '#000', '#000', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#fff', '#22b273'],
+        sectionsColor: ['#000', '#000', '#000', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#fff', '#22b273', '#fff'],
         sectionSelector: '.vertical-scrolling',
         navigation: false,
         slidesNavigation: true,
@@ -453,6 +456,7 @@
           'tenthSection',
           'eleventhSection',
           'twelvethSection',
+          'thirteenthSection',
         ],
     });
 
@@ -503,6 +507,64 @@
                                  .attr("r", d => circleScale(d.amount2561))
                                  .style("fill", "#22b273")
       })
-    </script>
+
+    var margin = {top: 10, right: 30, bottom: 20, left: 50}
+    var height = 600
+    var width = 800
+    var svg = d3.select("#garbage-budget-bkk")
+      .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+        .attr("transform",
+              "translate(" + margin.left + "," + margin.top + ")");
+
+    d3.csv("budget.csv").then(d => chart(d))
+
+    const chart = data => {
+      console.log(data)
+      var keys = data.columns.slice(2)
+      var groups = d3.map(data, function(d){return(d.group)}).keys()
+
+      var x = d3.scaleBand()
+          .domain(groups)
+          .range([0, width])
+          .padding([0.2])
+      svg.append("g")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x).tickSizeOuter(0));
+
+      var y = d3.scaleLinear()
+        .domain([0, 60])
+        .range([ height, 0 ]);
+      svg.append("g")
+        .call(d3.axisLeft(y));
+
+      var stackedData = d3.stack()
+        .keys(keys)
+        (data)
+
+      console.log(stackedData)
+
+      var color = d3.scaleOrdinal()
+        .domain(keys)
+        .range(['#e41a1c','#377eb8','#4daf4a'])
+
+      svg.append("g")
+        .selectAll("g")
+        // Enter in the stack data = loop key per key = group per group
+        .data(stackedData)
+        .enter().append("g")
+          .attr("fill", function(d) { return color(d.key); })
+          .selectAll("rect")
+          // enter a second time = loop subgroup per subgroup to add all rectangles
+          .data(function(d) { return d; })
+          .enter().append("rect")
+            .attr("x", function(d) { return x(d.data.group); })
+            .attr("y", function(d) { return y(d[1]); })
+            .attr("height", function(d) { return y(d[0]) - y(d[1]); })
+            .attr("width",x.bandwidth())
+    }
+  </script>
 </body>
 </html>
