@@ -307,7 +307,7 @@
         font-size: 24px;
         font-weight: 700;
         list-style: none;
-        line-height: 2;    
+        line-height: 2;
     }
 
     .chart-detail li::before {
@@ -321,11 +321,11 @@
     }
 
     .chart-detail li:nth-child(1) {
-        color: #22b273; 
+        color: #22b273;
     }
 
     .chart-detail li:nth-child(1):before{
-       background-color: #22b273; 
+       background-color: #22b273;
     }
 
     .chart-detail li:nth-child(2):before{
@@ -345,7 +345,7 @@
 
     .next-right {
         flex: 0 0 55%;
-        
+
     }
 
     .next-right h1 {
@@ -511,22 +511,15 @@
         </section>
         <section class="vertical-scrolling">
             <div class="green-circle d-flex flex-column justify-content-center first-circle">
-                <p>รู้ไหมว่า...?</p>
-                <p>คุณสร้างขยะไปเยอะแค่ไหน</p>
+                <p>คุณรู้ไหมว่า...?</p>
+                <p>คุณสร้างขยะไปเยอะแค่ไหน?</p>
             </div>
         </section>
         <section class="vertical-scrolling">
             <div class="green-circle green-scale-up d-flex flex-column justify-content-center second-circle">
-                <p>คุณอายุ 24 ปี</p>
-                <p class="font-black"><i>โดยเฉลี่ยคนกรุงเทพ สร้างขยะต่อวัน = 10,526</i></p>
-                <p class="big-bold">คุณสร้างขยะไปแล้ว xxx ตัน</p>
-            </div>
-        </section>
-        <section class="vertical-scrolling">
-            <div class="d-flex flex-column justify-content-center">
-                <p>คุณอายุ 24 ปี</p>
-                <p class="font-black"><i>โดยเฉลี่ยคนกรุงเทพ สร้างขยะต่อวัน/ต่อคน = xxxxxx</i></p>
-                <p class="big-bold">คุณสร้างขยะไปแล้ว xxx ตัน</p>
+              <p>คุณอายุ <input id="your-age" type="text" maxlength="2" size="2" value="24"> ปี</p>
+              <p class="font-black"><i>ในปี 2561 โดยเฉลี่ยแล้วคนกรุงเทพ 1 คน สร้างขยะ 1.88 กิโลกรัม ต่อวัน</i></p>
+              <p class="big-bold">คุณสร้างขยะไปแล้ว <span id="your-garbage-amount"></span> ตัน</p>
             </div>
         </section>
         <section class="vertical-scrolling">
@@ -815,12 +808,12 @@
     const chart = data => {
       var keys = data.columns.slice(2)
       var stackedData = d3.stack().keys(keys)(data)
-      
+
       var groups = d3.map(data, d => d.year).keys()
       var x = d3.scaleBand()
           .domain(groups)
           .range([0, width])
-          .padding([0.2])      
+          .padding([0.2])
       svg.append("g")
         .attr("transform", "translate(0, " + height + ")")
         .call(d3.axisBottom(x));
@@ -853,16 +846,26 @@
 
     // Animation
     $('#fullpage').mousemove(function( event ) {
-        if (window.location.href.indexOf("secondSection") > -1) { 
+        if (window.location.href.indexOf("secondSection") > -1) {
             $('.first-circle').addClass('show-first-circle')
         }
-        if (window.location.href.indexOf("thirdSection") > -1) { 
+        if (window.location.href.indexOf("thirdSection") > -1) {
             $('.second-circle').addClass('show-second-circle')
         }
-        if (window.location.href.indexOf("seventeenthSection") > -1) { 
+        if (window.location.href.indexOf("seventeenthSection") > -1) {
             $('.black-circle').addClass('show-black-circle')
         }
     });
+
+    const age = $('#your-age').val()
+    const garbageAmount = age * 1.88 * 365
+    $('#your-garbage-amount').text(garbageAmount.toFixed(2))
+
+    $('#your-age').on('input', () => {
+      const age = $('#your-age').val()
+      const garbageAmount = age * 1.88 * 365
+      $('#your-garbage-amount').text(garbageAmount.toFixed(2))
+    })
   </script>
 </body>
 </html>
