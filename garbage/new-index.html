@@ -275,7 +275,7 @@
         height: 100%;
     }
 
-    .box, 
+    .box,
     .right .box .y {
         display: flex;
         justify-content: center;
@@ -800,62 +800,59 @@
                                  .style("fill", "#22b273")
       })
 
-    var margin = {top: 10, right: 30, bottom: 20, left: 50}
-    var height = 600
+      var margin = {top: 10, right: 30, bottom: 20, left: 100}
     var width = 800
+    var height = 600
     var svg = d3.select("#garbage-budget-bkk")
       .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
       .append("g")
         .attr("transform",
-              "translate(" + margin.left + "," + margin.top + ")");
+              "translate(" + margin.left + ", " + margin.top + ")")
 
     d3.csv("budget.csv").then(d => chart(d))
-
     const chart = data => {
-      console.log(data)
       var keys = data.columns.slice(2)
-      var groups = d3.map(data, function(d){return(d.group)}).keys()
-
+      var groups = d3.map(data, d => d.year).keys()
+      
       var x = d3.scaleBand()
           .domain(groups)
           .range([0, width])
           .padding([0.2])
+      
       svg.append("g")
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x).tickSizeOuter(0));
 
       var y = d3.scaleLinear()
-        .domain([0, 60])
-        .range([ height, 0 ]);
+        .domain([778975800, 1828259500])
+        .range([height, 0]);
+      
       svg.append("g")
         .call(d3.axisLeft(y));
 
-      var stackedData = d3.stack()
-        .keys(keys)
-        (data)
-
+      var stackedData = d3.stack().keys(keys)(data)
       console.log(stackedData)
 
       var color = d3.scaleOrdinal()
         .domain(keys)
-        .range(['#e41a1c','#377eb8','#4daf4a'])
+        .range(['#aaa','#bbb','#ccc', '#ddd', '#fff'])
 
       svg.append("g")
         .selectAll("g")
-        // Enter in the stack data = loop key per key = group per group
         .data(stackedData)
-        .enter().append("g")
+        .enter()
+        .append("g")
           .attr("fill", function(d) { return color(d.key); })
           .selectAll("rect")
-          // enter a second time = loop subgroup per subgroup to add all rectangles
           .data(function(d) { return d; })
-          .enter().append("rect")
-            .attr("x", function(d) { return x(d.data.group); })
-            .attr("y", function(d) { return y(d[1]); })
-            .attr("height", function(d) { return y(d[0]) - y(d[1]); })
-            .attr("width",x.bandwidth())
+          .enter()
+          .append("rect")
+            .attr("x", d => x(d.data.year))
+            .attr("y", d => y(d[1]))
+            .attr("height", d => y(d[0]) - y(d[1]))
+            .attr("width", x.bandwidth())
     }
 
     // Animation
