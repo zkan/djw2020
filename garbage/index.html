@@ -496,7 +496,9 @@
         height: 700px;
     }
 
-
+    g {
+      color: #000;
+    }
     </style>
 </head>
 <body>
@@ -531,22 +533,18 @@
             <div class="row">
                 <div class="col d-flex justify-content-center">
                     <div class="right-detail">
-                        <ul>
-                            <li>ข้อมูลจากสำนักสิ่งแวดล้อมกรุงเทพ ระบุว่า</li>
-                            <li>ขยะมูลฝอยในกรุงเทพมีปริมาณมากขึ้นในทุกปี และไม่เคยลดลงเลย</li>
-                            <li>จากปี 2559 ถึงปี 2561 กรุงเทพสร้างขยะเพิ่มขึ้รโดยเฉลี่ย ...เปอร์เซ็น</li>
-                            <li>และมีแนวโน้มจะสูงขึ้นเป็น ... ในปี 2563</li>
-                        </ul>
+                      <p>ข้อมูลจากสำนักสิ่งแวดล้อม กรุงเทพฯ ระบุว่า ขยะมูลฝอยในกรุงเทพมีปริมาณมากขึ้นทุกปี โดยในปี 2561 กรุงเทพฯ ผลิตขยะมากถึง 3,907,625 ตันต่อปี</p>
+                      <p>ซึ่งเพิ่มขึ้นจากปี 2560 ถึง 65,299 ตัน แม้ว่าปริมาณขยะดังกล่าวจะเพิ่มขึ้นในปริมาณที่ลดลงจากปี 2559 แต่ก็มีการคาดการณ์ว่าปริมาณขยะต่อปีจะยังไม่ลดลง หากคนกรุงเทพฯ ยังไม่เริ่มปรับเปลี่ยนพฤติกรรม และยังไม่มีมาตรการใดๆ มาสร้างแรงจูงใจหรือปรับเปลี่ยนพฤติกรรมคน</p>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="year-g">ggg</div>
+                    <div id="total-garbage-each-year" class="year-g"></div>
                 </div>
             </div>
         </section>
         <section class="vertical-scrolling bg-top-gabage">
             <h1 class="how-produce">แล้วคุณรู้หรือไม่ว่า ?</h1>
-            <p class="big-bold">ขยะแต่ละชิ้นที่ปล่อยจากมือคุณ <br> มันเดินทางไปไหนต่อ</p>
+            <p class="big-bold">ขยะแต่ละชิ้นที่ปล่อยจากมือคุณมันเดินทางไปที่ไหนต่อ?</p>
         </section>
         <section class="vertical-scrolling">
             <h2 class="head-bold">เส้นทางขยะจากกรุงเทพ</h2>
@@ -719,7 +717,7 @@
 
     // fullpage customization
     $('#fullpage').fullpage({
-        sectionsColor: ['#000', '#000', '#000', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#fff', '#22b273', '#fff', '#fff', '#fff', '#fff', '#fff', '#000'],
+        sectionsColor: ['#000', '#000', '#000', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#fff', '#22b273', '#fff', '#fff', '#fff', '#fff', '#fff', '#000'],
         sectionSelector: '.vertical-scrolling',
         navigation: false,
         slidesNavigation: true,
@@ -741,7 +739,6 @@
           'fifteenthSection',
           'sixteenthSection',
           'seventeenthSection',
-          'lastSection'
         ],
     });
 
@@ -805,6 +802,7 @@
               "translate(" + margin.left + ", " + margin.top + ")")
 
     d3.csv("budget.csv").then(data => chart(data))
+
     const chart = data => {
       var keys = data.columns.slice(2)
       var stackedData = d3.stack().keys(keys)(data)
@@ -866,6 +864,58 @@
       const garbageAmount = age * 1.88 * 365
       $('#your-garbage-amount').text(garbageAmount.toFixed(2))
     })
+
+    d3.csv("total-garbage-amount.csv").then(data => totalGarbageChart(data))
+
+    function totalGarbageChart(data) {
+      console.log(data)
+
+      var margin = {top: 10, right: 30, bottom: 30, left: 60},
+          width = 460 - margin.left - margin.right,
+          height = 400 - margin.top - margin.bottom
+      var svg = d3.select("#total-garbage-each-year")
+        .append("svg")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+          .attr("transform",
+                "translate(" + margin.left + "," + margin.top + ")");
+
+      var x = d3.scaleTime()
+        .domain(d3.extent(data, d => d.year))
+        .range([0, width])
+
+      let tickLabels = ['2559', '2560', '2561'];
+      svg.append("g")
+        .attr("transform", "translate(0, " + height + ")")
+        .call(d3.axisBottom(x).tickFormat((_, i) => tickLabels[i]))
+        // .call(d3.axisBottom(x).ticks(3).tickValues([2559, 2560, 2561]))
+
+      var y = d3.scaleLinear()
+        .domain([9000, d3.max(data, d => d.amount)])
+        .range([height, 0]);
+      svg.append("g")
+        .call(d3.axisLeft(y))
+
+      svg.append("path")
+        .datum(data)
+        .attr("fill", "none")
+        .attr("stroke", "#000")
+        .attr("stroke-width", 2)
+        .attr("d", d3.line()
+          .x(d => x(d.year))
+          .y(d => y(d.amount))
+        )
+      svg.append("g")
+        .selectAll("dot")
+        .data(data)
+        .enter()
+        .append("circle")
+          .attr("cx", d => x(d.year))
+          .attr("cy", d => y(d.amount))
+          .attr("r", 5)
+          .attr("fill", "#69b3a2")
+    }
   </script>
 </body>
 </html>
