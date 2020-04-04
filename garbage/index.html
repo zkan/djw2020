@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ไหวบ่ ? บ่อขยะ</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.css" rel="stylesheet">
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ไหวบ่ ? บ่อขยะ</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.css" rel="stylesheet">
+  <style>
     body {
-        font-family: 'Chakra Petch', sans-serif;
-        background-color: #000;
-        color: #fff;
+      font-family: 'Chakra Petch', sans-serif;
+      background-color: #000;
+      color: #fff;
     }
 
     .scroll-icon {
-        position: absolute;
-        left: 50%;
-        bottom: 30px;
-        padding: 0 10px;
-        -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-        transform: translateX(-50%);
+      position: absolute;
+      left: 50%;
+      bottom: 30px;
+      padding: 0 10px;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
     }
 
     p {
-        font-size: 20px;
+      font-size: 20px;
     }
 
     section {
-        text-align: center;
+      text-align: center;
     }
 
     .green {
-        color: #22b273;
+      color: #22b273;
     }
 
     .green-circle {
@@ -46,749 +46,743 @@
       position: absolute;
     }
 
-    /* .green-scale-up {
-      width: 700px;
-      height: 700px;
-    } */
-
     .big-bold {
-        font-size: 28px;
-        font-weight: 700;
+      font-size: 28px;
+      font-weight: 700;
     }
 
     .font-black {
-        color: #000;
+      color: #000;
     }
 
     .how-produce {
-        display: inline-block;
-        margin-bottom: 40px;
-        background-color: #000;
-        color: #22b273;
-        padding: 10px;
+      display: inline-block;
+      margin-bottom: 40px;
+      background-color: #000;
+      color: #22b273;
+      padding: 10px;
     }
 
     .img-gabage {
-        position: absolute;
-        left: 50%;
-        bottom: -220px;
-        padding: 0 10px;
-        -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-        transform: translateX(-50%);
-        width: 100%;
-        overflow: hidden;
+      position: absolute;
+      left: 50%;
+      bottom: -220px;
+      padding: 0 10px;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      width: 100%;
+      overflow: hidden;
     }
     .right-detail {
-        display: inline-block;
-        background-color: #000;
-        padding: 20px;
-        flex: 0 0 40%;
-        margin-left: 250px;
+      display: inline-block;
+      background-color: #000;
+      padding: 20px;
+      flex: 0 0 40%;
+      margin-left: 250px;
     }
     .right-detail ul {
-        list-style: none;
-        line-height: 1.4;
-        text-align: left;
+      list-style: none;
+      line-height: 1.4;
+      text-align: left;
     }
 
     .right-detail ul li {
-        padding: 10px;
+      padding: 10px;
     }
 
     .bg-gabage {
-        background-image:  url('./Design/SVG/background_garbage_bw.png');
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: 220%;
+      background-image:  url('./Design/SVG/background_garbage_bw.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 220%;
     }
 
     .year-g {
-        background-color:rgba(255, 255, 255, 0.8);
-        border-radius: 5px;
-        width: 80%;
-        height: 100%;
+      background-color:rgba(255, 255, 255, 0.8);
+      border-radius: 5px;
+      width: 80%;
+      height: 100%;
     }
 
     .img-top-gabage {
-        position: absolute;
-        left: 50%;
-        top: -400px;
-        -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-        transform: translateX(-50%);
-        width: 100%;
-        overflow: hidden;
+      position: absolute;
+      left: 50%;
+      top: -400px;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      width: 100%;
+      overflow: hidden;
     }
 
-
     .bg-top-gabage {
-        background-image: url('./Design/SVG/background_garbage_bw.png');
-        background-size: 210%;
-        background-position: bottom center;
-        background-repeat: no-repeat;
+      background-image: url('./Design/SVG/background_garbage_bw.png');
+      background-size: 210%;
+      background-position: bottom center;
+      background-repeat: no-repeat;
     }
 
     .head-bold {
-        font-weight: 700;
+      font-weight: 700;
     }
 
     .gabage-path {
-        max-width: 60%;
-        margin: 40px auto;
+      max-width: 60%;
+      margin: 40px auto;
     }
 
     .font-20 {
-        font-size: 20px;
+      font-size: 20px;
     }
 
     .font-24 {
-        font-size: 24px;
+      font-size: 24px;
     }
 
     .bold {
-        font-weight: 700;
+      font-weight: 700;
     }
 
     .bangkok-have {
-        margin: 60px 80px;
+      margin: 60px 80px;
     }
 
     .white-bottom-box {
-        height: 20%;
-        width: 100%;
-        background-color: #fff;
-        position: absolute;
-        bottom: 0;
+      height: 20%;
+      width: 100%;
+      background-color: #fff;
+      position: absolute;
+      bottom: 0;
     }
 
     .green-bottom-box {
-        height: 20%;
-        width: 100%;
-        background-color: #22b273;
-        position: absolute;
-        top: 0;
+      height: 20%;
+      width: 100%;
+      background-color: #22b273;
+      position: absolute;
+      top: 0;
     }
 
     .reserve-space {
-        margin-top: 150px;
+      margin-top: 150px;
     }
 
     .green-bottom-box p {
-        font-size: 28px;
+      font-size: 28px;
     }
 
     .green-bottom-box .year {
-        color: #000;
-        font-size: 32px;
-        font-weight: 700;
+      color: #000;
+      font-size: 32px;
+      font-weight: 700;
     }
 
     .circle-g {
-        background-color: #55af79;
-        width: 70px;
-        height: 70px;
-        border-radius: 100%;
-        margin: 8px;
+      background-color: #55af79;
+      width: 70px;
+      height: 70px;
+      border-radius: 100%;
+      margin: 8px;
     }
 
     .circle-g:nth-child(2) {
-        background-color: #469163;
+      background-color: #469163;
     }
 
     .circle-g:nth-child(3) {
-        background-color: #387651;
+      background-color: #387651;
     }
 
     .circle-g:nth-child(4) {
-       background-color: #29573d;
+      background-color: #29573d;
     }
 
     .circle-g:nth-child(5) {
-       background-color: #1a3928;
+      background-color: #1a3928;
     }
 
     .circle-g:nth-child(6) {
-       background-color: #0d1d15;
+      background-color: #0d1d15;
     }
 
     .circle-g:nth-child(7) {
-       background-color: #000;
+      background-color: #000;
     }
 
     .bg-black {
-        background-color: black;
-        text-align: left;
-        padding: 120px;
+      background-color: black;
+      text-align: left;
+      padding: 120px;
     }
 
     .bg-black p {
-        font-size: 24px;
+      font-size: 24px;
     }
 
     .bg-black h1 {
-        font-size: 48px;
-        font-weight: 700;
+      font-size: 48px;
+      font-weight: 700;
     }
 
     .full-height {
-        height: 100vh;
+      height: 100vh;
     }
 
     .y,
     .z,
     .left,
     .right {
-        flex: 0 0 50%;
+      flex: 0 0 50%;
     }
 
     .box, .y {
-        border: 1px solid #fff;
+      border: 1px solid #fff;
     }
 
-
     .left .box:nth-child(1) {
-        height: 130%
+      height: 130%
     }
 
     .left .box:nth-child(2) {
-        height: 80%
+      height: 80%
     }
 
     .left .box:nth-child(3) {
-        height: 90%;
+      height: 90%;
     }
 
     .right .box:nth-child(1) {
-        height: 130%
+      height: 130%
     }
 
     .right .box:nth-child(2),.right .box:nth-child(3){
-        height: 45%;
+      height: 45%;
     }
 
     .right .box:nth-child(4) {
-        height: 80%;
+      height: 80%;
     }
 
     .right .box:nth-child(4) .y {
-        height: 100%;
+      height: 100%;
     }
 
     .box,
     .right .box .y {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    .box h1 {
-        font-size: 48px;
-        font-weight: 700;
-    }
-    .equal, .plus {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 100%;
-        transform: translate(-50%,-50%);
-        font-size: 200px;
-        font-weight: 700;
 
+    .box h1 {
+      font-size: 48px;
+      font-weight: 700;
     }
+
+    .equal, .plus {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%,-50%);
+      font-size: 200px;
+      font-weight: 700;
+    }
+
     .plus {
-        left: 76%;
+      left: 76%;
     }
+
     .chart-detail {
-        padding: 40px;
+      padding: 40px;
     }
 
     .chart-detail ul {
-        color: #000;
-        font-size: 24px;
-        font-weight: 700;
-        list-style: none;
-        line-height: 2;
+      color: #000;
+      font-size: 24px;
+      font-weight: 700;
+      list-style: none;
+      line-height: 2;
     }
 
     .chart-detail li::before {
-        content: ' ';
-        width: 20px;
-        height: 20px;
-        background-color: #000;
-        display: inline-block;
-        margin-right: 15px;
-
+      content: ' ';
+      width: 20px;
+      height: 20px;
+      background-color: #000;
+      display: inline-block;
+      margin-right: 15px;
     }
 
     .chart-detail li:nth-child(1) {
-        color: #22b273;
+      color: #22b273;
     }
 
     .chart-detail li:nth-child(1):before{
-       background-color: #22b273;
+      background-color: #22b273;
     }
 
     .chart-detail li:nth-child(2):before{
-       background-color: #808080;
-
+      background-color: #808080;
     }
 
     .chart-detail li:nth-child(3):before{
-       background-color: #4d4d4d;
+      background-color: #4d4d4d;
     }
 
     .next-left {
-        flex: 0 0 45%;
-        text-align: left;
-        margin-top: 4%;
+      flex: 0 0 45%;
+      text-align: left;
+      margin-top: 4%;
     }
 
     .next-right {
-        flex: 0 0 55%;
-
+      flex: 0 0 55%;
     }
 
     .next-right h1 {
-        font-weight: 700;
+      font-weight: 700;
     }
 
     .green-box {
-        background-color: #22b273;
-        padding: 60px;
+      background-color: #22b273;
+      padding: 60px;
     }
+
     .green-box p {
-        margin-bottom: 0;
+      margin-bottom: 0;
     }
 
     .green-box ol {
-        font-size: 20px;
-        padding-left: 18px;
-        line-height: 1.8;
+      font-size: 20px;
+      padding-left: 18px;
+      line-height: 1.8;
     }
 
     .country {
-        display: flex;
-        height: 100%;
-        padding: 50px;
+      display: flex;
+      height: 100%;
+      padding: 50px;
     }
 
     .country .each {
-        background-color: #22b273;
-        flex: 0 0 47%;
-        border-radius: 12px;
-        margin: 15px;
-        padding: 30px;
+      background-color: #22b273;
+      flex: 0 0 47%;
+      border-radius: 12px;
+      margin: 15px;
+      padding: 30px;
     }
 
     .country .each:nth-child(1) {
-        background-color: #000;
+      background-color: #000;
     }
 
     .country .each h3 {
-        font-weight: 700;
+      font-weight: 700;
     }
+
     .black-circle {
-        background-color: #000;
-        border-radius: 100%;
-        position: absolute;
-        opacity: 0;
+      background-color: #000;
+      border-radius: 100%;
+      position: absolute;
+      opacity: 0;
     }
 
     .show-black-circle {
-        opacity: 1;
+      opacity: 1;
     }
 
     .circle-1 {
-        width: 400px;
-        height: 400px;
-        top: 10%;
-        left: -30px;
-        transition: .8s;
+      width: 400px;
+      height: 400px;
+      top: 10%;
+      left: -30px;
+      transition: .8s;
     }
 
     .circle-2 {
-        width: 550px;
-        height: 550px;
-        top: 31%;
-        left: 170px;
-        transition: 1.5s;
+      width: 550px;
+      height: 550px;
+      top: 31%;
+      left: 170px;
+      transition: 1.5s;
     }
 
     .circle-3 {
-        width: 420px;
-        height: 420px;
-        bottom: -220px;
-        left: -50px;
-        transition: .9s;
+      width: 420px;
+      height: 420px;
+      bottom: -220px;
+      left: -50px;
+      transition: .9s;
     }
 
     .circle-4 {
-        width: 400px;
-        height: 400px;
-        top: -40px;
-        left: 20%;
-        transition: 2s;
+      width: 400px;
+      height: 400px;
+      top: -40px;
+      left: 20%;
+      transition: 2s;
     }
 
     .circle-5 {
-        width: 550px;
-        height: 550px;
-        top: 9%;
-        left: 40%;
-        transition: 3s;
+      width: 550px;
+      height: 550px;
+      top: 9%;
+      left: 40%;
+      transition: 3s;
     }
 
     .circle-6{
-        width: 820px;
-        height: 820px;
-        bottom: -18%;
-        right: -150px;
-        transition: 4s;
+      width: 820px;
+      height: 820px;
+      bottom: -18%;
+      right: -150px;
+      transition: 4s;
     }
 
     .act-content {
-        position: absolute;
-        z-index: 2;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        top: 50%;
+      position: absolute;
+      z-index: 2;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      top: 50%;
     }
 
     .team {
-        margin-bottom: 50px;
-        font-size: 20px;
-        line-height: 2;
+      margin-bottom: 50px;
+      font-size: 20px;
+      line-height: 2;
     }
 
     .team tr td:first-child {
-        text-align: left;
-        color: #22b273;
+      text-align: left;
+      color: #22b273;
     }
 
     .team tr td:last-child {
-        text-align: right;
+      text-align: right;
     }
 
     /* animate */
     .first-circle {
-        opacity: 0;
-        width: 0px;
-        height: 0px;
-        transition: 1s;
+      opacity: 0;
+      width: 0px;
+      height: 0px;
+      transition: 1s;
     }
 
     .show-first-circle {
-        opacity: 1;
-        width: 500px;
-        height: 500px;
+      opacity: 1;
+      width: 500px;
+      height: 500px;
     }
 
     .second-circle {
-        opacity: 0;
-        width: 500px;
-        height: 500px;
-        transition: 1s;
+      opacity: 0;
+      width: 500px;
+      height: 500px;
+      transition: 1s;
     }
 
     .show-second-circle {
-        opacity: 1;
-        width: 700px;
-        height: 700px;
+      opacity: 1;
+      width: 700px;
+      height: 700px;
     }
 
     g {
       color: #000;
     }
-    </style>
+  </style>
 </head>
 <body>
-    <div id="fullpage">
-        <section class="vertical-scrolling">
-            <h1>ไหวบ่ <span class="green">?</span> บ่อขยะ</h1>
-            <p>บ่อขยะในกรุงเทพอาจจะมีปริมาณไม่เพียงพอ ขยะจะล้นเมือง<br />ถ้าคนกรุงเทพยังมีพฤติกรรมการบริโภคแบบเดิมๆ และยังไม่มีวิธีการแยกและกำจัดขยะที่เป็นระบบ</p>
-            <div class="scroll-icon">
-                <p>Scroll down</p>
-                <a href="#secondSection" class="green"><i class="fas fa-chevron-down"></i></a>
+  <div id="fullpage">
+    <section class="vertical-scrolling">
+      <h1>ไหวบ่ <span class="green">?</span> บ่อขยะ</h1>
+      <p>บ่อขยะในกรุงเทพอาจจะมีปริมาณไม่เพียงพอ ขยะจะล้นเมือง<br />ถ้าคนกรุงเทพยังมีพฤติกรรมการบริโภคแบบเดิมๆ และยังไม่มีวิธีการแยกและกำจัดขยะที่เป็นระบบ</p>
+      <div class="scroll-icon">
+        <p>Scroll down</p>
+        <a href="#secondSection" class="green"><i class="fas fa-chevron-down"></i></a>
+      </div>
+    </section>
+    <section class="vertical-scrolling">
+      <div class="green-circle d-flex flex-column justify-content-center first-circle">
+        <p>คุณรู้ไหมว่า...?</p>
+        <p>คุณสร้างขยะไปเยอะแค่ไหน?</p>
+      </div>
+    </section>
+    <section class="vertical-scrolling">
+      <div class="green-circle green-scale-up d-flex flex-column justify-content-center second-circle">
+        <p>คุณอายุ <input id="your-age" type="text" maxlength="2" size="2" value="24"> ปี</p>
+        <p class="font-black"><i>ในปี 2561 โดยเฉลี่ยแล้วคนกรุงเทพ 1 คน สร้างขยะ 1.88 กิโลกรัม ต่อวัน</i></p>
+        <p class="big-bold">คุณสร้างขยะไปแล้ว <span id="your-garbage-amount"></span> ตัน</p>
+      </div>
+    </section>
+    <section class="vertical-scrolling">
+      <h1 class="how-produce">กรุงเทพผลิตขยะเท่าไหร่</h1>
+      <img class="img-gabage" src="./Design/SVG/background_garbage_bw.png" />
+    </section>
+    <section class="vertical-scrolling bg-gabage">
+      <h1 class="how-produce">กรุงเทพผลิตขยะเท่าไหร่</h1>
+      <div class="row">
+        <div class="col d-flex justify-content-center">
+          <div class="right-detail">
+            <p>ข้อมูลจากสำนักสิ่งแวดล้อม กรุงเทพฯ ระบุว่า ขยะมูลฝอยในกรุงเทพมีปริมาณมากขึ้นทุกปี โดยในปี 2561 กรุงเทพฯ ผลิตขยะมากถึง 3,907,625 ตันต่อปี</p>
+            <p>ซึ่งเพิ่มขึ้นจากปี 2560 ถึง 65,299 ตัน แม้ว่าปริมาณขยะดังกล่าวจะเพิ่มขึ้นในปริมาณที่ลดลงจากปี 2559 แต่ก็มีการคาดการณ์ว่าปริมาณขยะต่อปีจะยังไม่ลดลง หากคนกรุงเทพฯ ยังไม่เริ่มปรับเปลี่ยนพฤติกรรม และยังไม่มีมาตรการใดๆ มาสร้างแรงจูงใจหรือปรับเปลี่ยนพฤติกรรมคน</p>
+          </div>
+        </div>
+        <div class="col">
+          <div id="total-garbage-each-year" class="year-g d-flex justify-content-center align-items-center"></div>
+        </div>
+      </div>
+    </section>
+    <section class="vertical-scrolling bg-top-gabage">
+      <h1 class="how-produce">แล้วคุณรู้หรือไม่ว่า ?</h1>
+      <p class="big-bold">ขยะแต่ละชิ้นที่ปล่อยจากมือคุณมันเดินทางไปที่ไหนต่อ?</p>
+    </section>
+    <section class="vertical-scrolling">
+      <h2 class="head-bold">เส้นทางขยะจากกรุงเทพ</h2>
+      <img class="gabage-path" src="./Design/SVG/pieces/Asset 7.svg" />
+      <p class="small">ข้อมูลจาก : https://www.thebangkokinsight.com/193971/</p>
+    </section>
+    <section class="vertical-scrolling">
+      <h2 class="head-bold">ปัจจุบัน กรุงเทพมี</h2>
+      <div class="row bangkok-have">
+        <div class="col"><img src="./Design/SVG/pieces/Asset 8.svg" /></div>
+        <div class="col"><img src="./Design/SVG/pieces/Asset 9.svg" /></div>
+        <div class="col"><img src="./Design/SVG/pieces/Asset 10.svg" /></div>
+        <div class="col"><img src="./Design/SVG/pieces/Asset 11.svg" /></div>
+      </div>
+      <p class="font-20">มารับและขนส่งขยะเหล่านั้นออกไป จากย่านที่ชุมชนแล้วเอาไว้ที่บ่อขยะเหล่านี้ เพื่อ <span class="font-24 bold">ฝังกลบ?</p>
+    </section>
+    <section class="vertical-scrolling">
+      <h1 class="how-produce">แต่คุณรู้หรือไม่ว่า ?</h1>
+      <p class="big-bold">บ่อขยะที่มีอยู่ในกรุงเทพตอนนี้<br> มีความสามารถในการรองรับขยะแค่ไหน</p>
+      <div class="white-bottom-box"></div>
+    </section>
+    <section class="vertical-scrolling">
+      <div class="green-bottom-box d-flex align-items-center justify-content-around">
+        <p>ปริมาณขยะมูลฝอยแต่ละเขต</p>
+        <p class="year">2560</p>
+        <p>จำนวนประชากรแต่ละเขต</p>
+      </div>
+      <div class="row">
+        <div class="col-3 d-flex flex-column align-items-center justify-content-center reserve-space">
+          <div class="circle-g"></div>
+          <div class="circle-g"></div>
+          <div class="circle-g"></div>
+          <div class="circle-g"></div>
+          <div class="circle-g"></div>
+          <div class="circle-g"></div>
+          <div class="circle-g"></div>
+        </div>
+        <div class="col-9 reserve-space">
+          <div id="garbage-amount-map-2"></div>
+        </div>
+      </div>
+    </section>
+    <section class="vertical-scrolling">
+      <div class="row full-height">
+        <div class="col-6 bg-black d-flex justify-content-center flex-column">
+          <p>หากปริมาณขยะเพิ่มขึ้นเรื่อยๆ โดยยังไม่ทำอะไรในอีก ... ปี <br> ก็ต้องหาบ่อขยะแห่งอื่นมารองรับขยะฝังกลบเหล่านี้</p>
+          <h1>XXX ตร.กม.</h1>
+        </div>
+        <div class="col-6">
+          <div class="row">
+            <div class="left">
+              <div class="box"><h1>เขต A</h1></div>
+              <div class="box"><h1>เขต B</h1></div>
+              <div class="box"><h1>เขต C</h1></div>
             </div>
-        </section>
-        <section class="vertical-scrolling">
-            <div class="green-circle d-flex flex-column justify-content-center first-circle">
-                <p>คุณรู้ไหมว่า...?</p>
-                <p>คุณสร้างขยะไปเยอะแค่ไหน?</p>
+            <div class="right">
+              <div class="box"><h1>เขต D</h1></div>
+              <div class="box"><h1>เขต E</h1></div>
+              <div class="box"><h1>เขต F</h1></div>
+              <div class="box d-flex">
+                <div class="y"><h1>Y</h1></div>
+                <div class="z"><h1>Z</h1></div>
+              </div>
             </div>
-        </section>
-        <section class="vertical-scrolling">
-            <div class="green-circle green-scale-up d-flex flex-column justify-content-center second-circle">
-              <p>คุณอายุ <input id="your-age" type="text" maxlength="2" size="2" value="24"> ปี</p>
-              <p class="font-black"><i>ในปี 2561 โดยเฉลี่ยแล้วคนกรุงเทพ 1 คน สร้างขยะ 1.88 กิโลกรัม ต่อวัน</i></p>
-              <p class="big-bold">คุณสร้างขยะไปแล้ว <span id="your-garbage-amount"></span> ตัน</p>
-            </div>
-        </section>
-        <section class="vertical-scrolling">
-            <h1 class="how-produce">กรุงเทพผลิตขยะเท่าไหร่</h1>
-            <img class="img-gabage" src="./Design/SVG/background_garbage_bw.png" />
-        </section>
-        <section class="vertical-scrolling bg-gabage">
-            <h1 class="how-produce">กรุงเทพผลิตขยะเท่าไหร่</h1>
-            <div class="row">
-                <div class="col d-flex justify-content-center">
-                    <div class="right-detail">
-                      <p>ข้อมูลจากสำนักสิ่งแวดล้อม กรุงเทพฯ ระบุว่า ขยะมูลฝอยในกรุงเทพมีปริมาณมากขึ้นทุกปี โดยในปี 2561 กรุงเทพฯ ผลิตขยะมากถึง 3,907,625 ตันต่อปี</p>
-                      <p>ซึ่งเพิ่มขึ้นจากปี 2560 ถึง 65,299 ตัน แม้ว่าปริมาณขยะดังกล่าวจะเพิ่มขึ้นในปริมาณที่ลดลงจากปี 2559 แต่ก็มีการคาดการณ์ว่าปริมาณขยะต่อปีจะยังไม่ลดลง หากคนกรุงเทพฯ ยังไม่เริ่มปรับเปลี่ยนพฤติกรรม และยังไม่มีมาตรการใดๆ มาสร้างแรงจูงใจหรือปรับเปลี่ยนพฤติกรรมคน</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div id="total-garbage-each-year" class="year-g d-flex justify-content-center align-items-center"></div>
-                </div>
-            </div>
-        </section>
-        <section class="vertical-scrolling bg-top-gabage">
-            <h1 class="how-produce">แล้วคุณรู้หรือไม่ว่า ?</h1>
-            <p class="big-bold">ขยะแต่ละชิ้นที่ปล่อยจากมือคุณมันเดินทางไปที่ไหนต่อ?</p>
-        </section>
-        <section class="vertical-scrolling">
-            <h2 class="head-bold">เส้นทางขยะจากกรุงเทพ</h2>
-            <img class="gabage-path" src="./Design/SVG/pieces/Asset 7.svg" />
-            <p class="small">ข้อมูลจาก : https://www.thebangkokinsight.com/193971/</p>
-        </section>
-        <section class="vertical-scrolling">
-            <h2 class="head-bold">ปัจจุบัน กรุงเทพมี</h2>
-            <div class="row bangkok-have">
-                <div class="col"><img src="./Design/SVG/pieces/Asset 8.svg" /></div>
-                <div class="col"><img src="./Design/SVG/pieces/Asset 9.svg" /></div>
-                <div class="col"><img src="./Design/SVG/pieces/Asset 10.svg" /></div>
-                <div class="col"><img src="./Design/SVG/pieces/Asset 11.svg" /></div>
-            </div>
-            <p class="font-20">มารับและขนส่งขยะเหล่านั้นออกไป จากย่านที่ชุมชนแล้วเอาไว้ที่บ่อขยะเหล่านี้ เพื่อ <span class="font-24 bold">ฝังกลบ?</p>
-        </section>
-        <section class="vertical-scrolling">
-            <h1 class="how-produce">แต่คุณรู้หรือไม่ว่า ?</h1>
-            <p class="big-bold">บ่อขยะที่มีอยู่ในกรุงเทพตอนนี้<br> มีความสามารถในการรองรับขยะแค่ไหน</p>
-            <div class="white-bottom-box"></div>
-        </section>
-        <section class="vertical-scrolling">
-            <div class="green-bottom-box d-flex align-items-center justify-content-around">
-                <p>ปริมาณขยะมูลฝอยแต่ละเขต</p>
-                <p class="year">2560</p>
-                <p>จำนวนประชากรแต่ละเขต</p>
-            </div>
-            <div class="row">
-                <div class="col-3 d-flex flex-column align-items-center justify-content-center reserve-space">
-                    <div class="circle-g"></div>
-                    <div class="circle-g"></div>
-                    <div class="circle-g"></div>
-                    <div class="circle-g"></div>
-                    <div class="circle-g"></div>
-                    <div class="circle-g"></div>
-                    <div class="circle-g"></div>
-                </div>
-                <div class="col-9 reserve-space">
-                    <div id="garbage-amount-map-2"></div>
-                </div>
-            </div>
-        </section>
-        <section class="vertical-scrolling">
-            <div class="row full-height">
-                <div class="col-6 bg-black d-flex justify-content-center flex-column">
-                    <p>หากปริมาณขยะเพิ่มขึ้นเรื่อยๆ โดยยังไม่ทำอะไรในอีก ... ปี <br> ก็ต้องหาบ่อขยะแห่งอื่นมารองรับขยะฝังกลบเหล่านี้</p>
-                    <h1>XXX ตร.กม.</h1>
-                </div>
-                <div class="col-6">
-                    <div class="row">
-                        <div class="left">
-                            <div class="box"><h1>เขต A</h1></div>
-                            <div class="box"><h1>เขต B</h1></div>
-                            <div class="box"><h1>เขต C</h1></div>
-                        </div>
-                        <div class="right">
-                            <div class="box"><h1>เขต D</h1></div>
-                            <div class="box"><h1>เขต E</h1></div>
-                            <div class="box"><h1>เขต F</h1></div>
-                            <div class="box d-flex">
-                                <div class="y"><h1>Y</h1></div>
-                                <div class="z"><h1>Z</h1></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <h1 class="equal">=</h1>
-                <h1 class="plus">+</h1>
-            </div>
-        </section>
-        <section class="vertical-scrolling">
-            <div class="d-flex">
-                <div class="next-left">
-                    <div class="green-box">
-                        <h1 class="how-produce">มาดูกันว่า</h1>
-                        <h1>งบประมาณด้านสิ่งแวดล้อม <br> ที่จัดสรรในแต่ละปี <br> เอาไปทำอะไรบ้าง?</h1>
-                    </div>
-                    <div class="chart-detail">
-                        <ul>
-                            <li>งบประมาณขยะ</li>
-                            <li>งบอื่นๆ</li>
-                            <li>งบอื่นๆ</li>
-                            <li>งบอื่นๆ</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="next-right">
-                    <h1 class="font-black">งบประมาณสิ่งแวดล้อม</h1>
-                    <div id="garbage-budget-bkk"></div>
-                </div>
-            </div>
-        </section>
-        <section class="vertical-scrolling">
-            <div class="d-flex">
-                <div class="next-left">
-                    <div class="green-box">
-                       <p>วิเคราะห์กราฟ</p>
-                       <p>[ตั้งคำถามกับข้อมูลงบประมาณที่ได้มา]</p>
-                       <ol>
-                            <li>เขตไหนได้งบเยอะที่สุด สัมพันธ์กับจำนวนขยะและจำนวนประชากรหรือไม่</li>
-                            <li>งบด้านสิ่งแวดล้อมเอาไปใช้อะไรบ้าง ใช้ส่วนไหนเยอะที่สุด และน้อยที่สุด</li>
-                            <li>งบประมาณที่ใช้ไปสอดคล้องกับโรดแมพที่ตั้งไว้ไหม</li>
-                            <li>เปรียบเทียบงบ 3 ปี เพิ่มขึ้นทุกปีไหม แพทเทิร์นการใช้จ่ายเหมือนเดิมหรือเปล่า [ถ้าเพิ่มขึ้น ทำไมขยะที่เอามาฝังกลบไม่ลดลง]</li>
-                            <li>ที่มางบประมาณมาจากไหนบ้าง</li>
-                       </ol>
-                    </div>
-                </div>
-                <div class="next-right">
-                    <h1 class="font-black">งบประมาณสิ่งแวดล้อม</h1>
-                    <div id="garbage-budget-bkk-2"></div>
-                </div>
-            </div>
-        </section>
-        <section class="vertical-scrolling">
-            <div class="row country">
-                <div class="each"><h3>THAILAND</h3></div>
-                <div class="each"><h3>SWEDEN</h3></div>
-                <div class="each"><h3>TAIWAN</h3></div>
-                <div class="each"><h3>GERMANY</h3></div>
-            </div>
-        </section>
-        <section class="vertical-scrolling">
-            <p class="font-black">โร้ดแมพการลดขยะของกทม. และความสำเร็จในการลดขนะในต่างประเทศ <br> ตามรายงานของสำนักสิ่งแวดล้อม กทม. พบว่า ขยะในกรุงเทพมีเพิ่มขึ้นทุกปีโดยสาเหตุเกิด <br> จาก...</p>
-            <p class="font-black">อันที่จริงแล้ว กทม.ก็มีโร้ดแมพในการลดขยะ และกำลังอยู่ในขั้นตอนการดำเนินการ <br> มาดูกันว่ากรุงเทพทำอะไรไปแล้วบ้างมีอะไรที่ยังไม่ได้ทำและต่างประเทศเขาทำอะไปถึงไหน <br> แล้ว</p>
-            <p class="green">สรุปสุดท้าย --- บ่อขยะในกรุงเทพอาจจะมีปริมาณไม่เพียงพอ ขยะจะล้นเมือง<br> ถ้าคนกรุงเทพยังบริโภคในปริมาณเท่าเดิมและยังไม่มีการวิธีแยกและกำจัดขยะที่เป็นระบบ</p>
-        </section>
-        <section class="vertical-scrolling">
-            <div class="act-content">
-                <p>สรุปปิดท้าย: ตั้งคำถามกับคนอ่าน และเรียกร้องให้มีแอคชั่นบางอย่าง<br>โร้ดแมพนี้ช้าไปไหม เมื่อเทียบกับปริมาณการขยะที่เพิ่มสูงขึ้น จำนวนประชากรในกรุงเทพที่มีมากขึ้นในทุกๆปีเราต้อง<br> ใช้พื้นที่ และงบประมาณอีกเท่าไหร่ในการกำจัดขยะที่แยกไม่ถูกวิธี<br>ไหวบ่? บ่อขยะที่รองรับขยะจากกรุงเทพอาจไม่ไหวแล้ว ถ้าเราไม่เปลี่ยนแปลงพฤติกรรม และเรียกร้องให้ภครัฐออก<br>กฏหมายหรือนโยบายเพื่อแก้ปัญหาขยะตั้งแต่ตอนนี้</p>
-                <h1 class="green">ACT NOW!</h1>
-            </div>
-            <div class="black-circle circle-1"></div>
-            <div class="black-circle circle-2"></div>
-            <div class="black-circle circle-3"></div>
-            <div class="black-circle circle-4"></div>
-            <div class="black-circle circle-5"></div>
-            <div class="black-circle circle-6"></div>
-        </section>
-        <section class="vertical-scrolling">
-            <div class="d-flex align-items-center justify-content-center flex-column">
-                <table class="team">
-                    <tr>
-                      <td>Kade Thossaphonpaisan</td>
-                      <td>Journalist</td>
-                    </tr>
-                    <tr>
-                      <td>Kan Ouivirach</td>
-                      <td>Programmer/Coder</td>
-                    </tr>
-                    <tr>
-                      <td >Monsicha Srisuantang</td>
-                      <td>Graphic Designer</td>
-                    </tr>
-                    <tr>
-                      <td>Santichai Apornsri</td>
-                      <td>Team Coach</td>
-                    </tr>
-                  </table>
-                <p>This Project is a part of Data Journalism Workshop 2020</p>
-            </div>
-        </section>
-    </div>
+          </div>
+        </div>
+        <h1 class="equal">=</h1>
+        <h1 class="plus">+</h1>
+      </div>
+    </section>
+    <section class="vertical-scrolling">
+      <div class="d-flex">
+        <div class="next-left">
+          <div class="green-box">
+            <h1 class="how-produce">มาดูกันว่า</h1>
+            <h1>งบประมาณด้านสิ่งแวดล้อม <br> ที่จัดสรรในแต่ละปี <br> เอาไปทำอะไรบ้าง?</h1>
+          </div>
+          <div class="chart-detail">
+            <ul>
+              <li>งบประมาณขยะ</li>
+              <li>งบอื่นๆ</li>
+              <li>งบอื่นๆ</li>
+              <li>งบอื่นๆ</li>
+            </ul>
+          </div>
+        </div>
+        <div class="next-right">
+          <h1 class="font-black">งบประมาณสิ่งแวดล้อม</h1>
+          <div id="garbage-budget-bkk"></div>
+        </div>
+      </div>
+    </section>
+    <section class="vertical-scrolling">
+      <div class="d-flex">
+        <div class="next-left">
+          <div class="green-box">
+            <p>วิเคราะห์กราฟ</p>
+            <p>[ตั้งคำถามกับข้อมูลงบประมาณที่ได้มา]</p>
+            <ol>
+              <li>เขตไหนได้งบเยอะที่สุด สัมพันธ์กับจำนวนขยะและจำนวนประชากรหรือไม่</li>
+              <li>งบด้านสิ่งแวดล้อมเอาไปใช้อะไรบ้าง ใช้ส่วนไหนเยอะที่สุด และน้อยที่สุด</li>
+              <li>งบประมาณที่ใช้ไปสอดคล้องกับโรดแมพที่ตั้งไว้ไหม</li>
+              <li>เปรียบเทียบงบ 3 ปี เพิ่มขึ้นทุกปีไหม แพทเทิร์นการใช้จ่ายเหมือนเดิมหรือเปล่า [ถ้าเพิ่มขึ้น ทำไมขยะที่เอามาฝังกลบไม่ลดลง]</li>
+              <li>ที่มางบประมาณมาจากไหนบ้าง</li>
+            </ol>
+          </div>
+        </div>
+        <div class="next-right">
+          <h1 class="font-black">งบประมาณสิ่งแวดล้อม</h1>
+          <div id="garbage-budget-bkk-2"></div>
+        </div>
+      </div>
+    </section>
+    <section class="vertical-scrolling">
+      <div class="row country">
+        <div class="each"><h3>THAILAND</h3></div>
+        <div class="each"><h3>SWEDEN</h3></div>
+        <div class="each"><h3>TAIWAN</h3></div>
+        <div class="each"><h3>GERMANY</h3></div>
+      </div>
+    </section>
+    <section class="vertical-scrolling">
+      <p class="font-black">โร้ดแมพการลดขยะของกทม. และความสำเร็จในการลดขนะในต่างประเทศ <br> ตามรายงานของสำนักสิ่งแวดล้อม กทม. พบว่า ขยะในกรุงเทพมีเพิ่มขึ้นทุกปีโดยสาเหตุเกิด <br> จาก...</p>
+      <p class="font-black">อันที่จริงแล้ว กทม.ก็มีโร้ดแมพในการลดขยะ และกำลังอยู่ในขั้นตอนการดำเนินการ <br> มาดูกันว่ากรุงเทพทำอะไรไปแล้วบ้างมีอะไรที่ยังไม่ได้ทำและต่างประเทศเขาทำอะไปถึงไหน <br> แล้ว</p>
+      <p class="green">สรุปสุดท้าย --- บ่อขยะในกรุงเทพอาจจะมีปริมาณไม่เพียงพอ ขยะจะล้นเมือง<br> ถ้าคนกรุงเทพยังบริโภคในปริมาณเท่าเดิมและยังไม่มีการวิธีแยกและกำจัดขยะที่เป็นระบบ</p>
+    </section>
+    <section class="vertical-scrolling">
+      <div class="act-content">
+        <p>สรุปปิดท้าย: ตั้งคำถามกับคนอ่าน และเรียกร้องให้มีแอคชั่นบางอย่าง<br>โร้ดแมพนี้ช้าไปไหม เมื่อเทียบกับปริมาณการขยะที่เพิ่มสูงขึ้น จำนวนประชากรในกรุงเทพที่มีมากขึ้นในทุกๆปีเราต้อง<br> ใช้พื้นที่ และงบประมาณอีกเท่าไหร่ในการกำจัดขยะที่แยกไม่ถูกวิธี<br>ไหวบ่? บ่อขยะที่รองรับขยะจากกรุงเทพอาจไม่ไหวแล้ว ถ้าเราไม่เปลี่ยนแปลงพฤติกรรม และเรียกร้องให้ภครัฐออก<br>กฏหมายหรือนโยบายเพื่อแก้ปัญหาขยะตั้งแต่ตอนนี้</p>
+        <h1 class="green">ACT NOW!</h1>
+      </div>
+      <div class="black-circle circle-1"></div>
+      <div class="black-circle circle-2"></div>
+      <div class="black-circle circle-3"></div>
+      <div class="black-circle circle-4"></div>
+      <div class="black-circle circle-5"></div>
+      <div class="black-circle circle-6"></div>
+    </section>
+    <section class="vertical-scrolling">
+      <div class="d-flex align-items-center justify-content-center flex-column">
+        <table class="team">
+          <tr>
+            <td>Kade Thossaphonpaisan</td>
+            <td>Journalist</td>
+          </tr>
+          <tr>
+            <td>Kan Ouivirach</td>
+            <td>Programmer/Coder</td>
+          </tr>
+          <tr>
+            <td >Monsicha Srisuantang</td>
+            <td>Graphic Designer</td>
+          </tr>
+          <tr>
+            <td>Santichai Apornsri</td>
+            <td>Team Coach</td>
+          </tr>
+        </table>
+        <p>This Project is a part of Data Journalism Workshop 2020</p>
+      </div>
+    </section>
+  </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.min.js"></script>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script>
-
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script>
     // fullpage customization
     $('#fullpage').fullpage({
-        sectionsColor: ['#000', '#000', '#000', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#fff', '#22b273', '#fff', '#fff', '#fff', '#fff', '#fff', '#000'],
-        sectionSelector: '.vertical-scrolling',
-        navigation: false,
-        slidesNavigation: true,
-        anchors: [
-          'firstSection',
-          'secondSection',
-          'thirdSection',
-          'fourthSection',
-          'fifthSection',
-          'sixthSection',
-          'seventhSection',
-          'eighthSection',
-          'ninthSection',
-          'tenthSection',
-          'eleventhSection',
-          'twelvethSection',
-          'thirteenthSection',
-          'fourteenthSection',
-          'fifteenthSection',
-          'sixteenthSection',
-          'seventeenthSection',
-        ],
+      sectionsColor: ['#000', '#000', '#000', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#22b273', '#fff', '#22b273', '#fff', '#fff', '#fff', '#fff', '#fff', '#000'],
+      sectionSelector: '.vertical-scrolling',
+      navigation: false,
+      slidesNavigation: true,
+      anchors: [
+        'firstSection',
+        'secondSection',
+        'thirdSection',
+        'fourthSection',
+        'fifthSection',
+        'sixthSection',
+        'seventhSection',
+        'eighthSection',
+        'ninthSection',
+        'tenthSection',
+        'eleventhSection',
+        'twelvethSection',
+        'thirteenthSection',
+        'fourteenthSection',
+        'fifteenthSection',
+        'sixteenthSection',
+        'seventeenthSection',
+      ],
     });
 
-      const circleScale = d3.scaleSqrt().domain([55, 390]).range([0, 20])
-      d3.csv('garbage-amount-full.csv').then(districtCoordinates => {
-        const svgContainer1 = d3.select("#garbage-amount-map-1").append("svg")
-                                                             .attr("width", 800)
-                                                             .attr("height", 600)
+    const circleScale = d3.scaleSqrt().domain([55, 390]).range([0, 20])
+    d3.csv('garbage-amount-full.csv').then(districtCoordinates => {
+      const svgContainer1 = d3.select("#garbage-amount-map-1").append("svg")
+        .attr("width", 800)
+        .attr("height", 600)
 
-        const circles1 = svgContainer1.selectAll("circle")
-                                    .data(districtCoordinates)
-                                    .enter()
-                                    .append("circle")
+      const circles1 = svgContainer1.selectAll("circle")
+        .data(districtCoordinates)
+        .enter()
+        .append("circle")
 
-        const circleAttributes1 = circles1
-                                 .attr("cx", d => d.x)
-                                 .attr("cy", d => d.y)
-                                 .attr("r", d => circleScale(d.amount2559))
-                                 .style("fill", "#22b273")
+      const circleAttributes1 = circles1
+        .attr("cx", d => d.x)
+        .attr("cy", d => d.y)
+        .attr("r", d => circleScale(d.amount2559))
+        .style("fill", "#22b273")
 
-        const svgContainer2 = d3.select("#garbage-amount-map-2").append("svg")
-                                                             .attr("width", 800)
-                                                             .attr("height", 600)
+      const svgContainer2 = d3.select("#garbage-amount-map-2").append("svg")
+        .attr("width", 800)
+        .attr("height", 600)
 
-        const circles2 = svgContainer2.selectAll("circle")
-                                    .data(districtCoordinates)
-                                    .enter()
-                                    .append("circle")
+      const circles2 = svgContainer2.selectAll("circle")
+        .data(districtCoordinates)
+        .enter()
+        .append("circle")
 
-        const circleAttributes2 = circles2
-                                 .attr("cx", d => d.x)
-                                 .attr("cy", d => d.y)
-                                 .attr("r", d => circleScale(d.amount2560))
-                                 .style("fill", "#22b273")
+      const circleAttributes2 = circles2
+        .attr("cx", d => d.x)
+        .attr("cy", d => d.y)
+        .attr("r", d => circleScale(d.amount2560))
+        .style("fill", "#22b273")
 
-        const svgContainer3 = d3.select("#garbage-amount-map-3").append("svg")
-                                                             .attr("width", 800)
-                                                             .attr("height", 600)
+      const svgContainer3 = d3.select("#garbage-amount-map-3").append("svg")
+        .attr("width", 800)
+        .attr("height", 600)
 
-        const circles3 = svgContainer3.selectAll("circle")
-                                    .data(districtCoordinates)
-                                    .enter()
-                                    .append("circle")
+      const circles3 = svgContainer3.selectAll("circle")
+        .data(districtCoordinates)
+        .enter()
+        .append("circle")
 
-        const circleAttributes3 = circles3
-                                 .attr("cx", d => d.x)
-                                 .attr("cy", d => d.y)
-                                 .attr("r", d => circleScale(d.amount2561))
-                                 .style("fill", "#22b273")
-      })
+      const circleAttributes3 = circles3
+        .attr("cx", d => d.x)
+        .attr("cy", d => d.y)
+        .attr("r", d => circleScale(d.amount2561))
+        .style("fill", "#22b273")
+    })
 
     var margin = {top: 10, right: 30, bottom: 20, left: 100}
     var width = 500
@@ -798,8 +792,7 @@
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
       .append("g")
-        .attr("transform",
-              "translate(" + margin.left + ", " + margin.top + ")")
+        .attr("transform", "translate(" + margin.left + ", " + margin.top + ")")
 
     d3.csv("budget.csv").then(data => chart(data))
 
@@ -809,18 +802,18 @@
 
       var groups = d3.map(data, d => d.year).keys()
       var x = d3.scaleBand()
-          .domain(groups)
-          .range([0, width])
-          .padding([0.2])
+        .domain(groups)
+        .range([0, width])
+        .padding([0.2])
       svg.append("g")
         .attr("transform", "translate(0, " + height + ")")
-        .call(d3.axisBottom(x));
+        .call(d3.axisBottom(x))
 
       var y = d3.scaleLinear()
         .domain([0, d3.max(stackedData, d => d3.max(d, d => d[1]))])
-        .range([height, 0]);
+        .range([height, 0])
       svg.append("g")
-        .call(d3.axisLeft(y));
+        .call(d3.axisLeft(y))
 
       var color = d3.scaleOrdinal()
         .domain(keys)
@@ -844,15 +837,15 @@
 
     // Animation
     $('#fullpage').mousemove(function( event ) {
-        if (window.location.href.indexOf("secondSection") > -1) {
-            $('.first-circle').addClass('show-first-circle')
-        }
-        if (window.location.href.indexOf("thirdSection") > -1) {
-            $('.second-circle').addClass('show-second-circle')
-        }
-        if (window.location.href.indexOf("sixteenthSection") > -1) {
-            $('.black-circle').addClass('show-black-circle')
-        }
+      if (window.location.href.indexOf("secondSection") > -1) {
+        $('.first-circle').addClass('show-first-circle')
+      }
+      if (window.location.href.indexOf("thirdSection") > -1) {
+        $('.second-circle').addClass('show-second-circle')
+      }
+      if (window.location.href.indexOf("sixteenthSection") > -1) {
+        $('.black-circle').addClass('show-black-circle')
+      }
     });
 
     const age = $('#your-age').val()
