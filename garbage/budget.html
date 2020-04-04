@@ -1,0 +1,60 @@
+<html>
+  <body>
+    <div id="garbage-budget-bkk"></div>
+    
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script>
+    var margin = {top: 10, right: 30, bottom: 20, left: 100}
+    var width = 500
+    var height = 300
+    var svg = d3.select("#garbage-budget-bkk")
+      .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+        .attr("transform",
+              "translate(" + margin.left + ", " + margin.top + ")")
+
+    d3.csv("budget.csv").then(data => chart(data))
+    const chart = data => {
+      var keys = data.columns.slice(2)
+      var stackedData = d3.stack().keys(keys)(data)
+      console.log(stackedData)
+      
+      var groups = d3.map(data, d => d.year).keys()
+      var x = d3.scaleBand()
+          .domain(groups)
+          .range([0, width])
+          .padding([0.2])      
+      svg.append("g")
+        .attr("transform", "translate(0, " + height + ")")
+        .call(d3.axisBottom(x));
+
+      var y = d3.scaleLinear()
+        .domain([0, d3.max(stackedData, d => d3.max(d, d => d[1]))])
+        .range([height, 0]);
+      svg.append("g")
+        .call(d3.axisLeft(y));
+
+      var color = d3.scaleOrdinal()
+        .domain(keys)
+        .range(['#000','#1a3928','#29573d', '#387651', '#55af79'])
+
+      svg.append("g")
+        .selectAll("g")
+        .data(stackedData)
+        .enter()
+        .append("g")
+          .attr("fill", d => color(d.key))
+          .selectAll("rect")
+          .data(d => d)
+          .enter()
+          .append("rect")
+            .attr("x", d => x(d.data.year))
+            .attr("y", d => y(d[1]))
+            .attr("height", d => y(d[0]) - y(d[1]))
+            .attr("width", x.bandwidth())
+    }
+    </script>
+  </body>
+</html>
